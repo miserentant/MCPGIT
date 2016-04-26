@@ -25,12 +25,15 @@ public class Tools {
 	public static boolean correspond(char[] texte, char[][] mots) {
 		boolean trouve = false;
 		int nombreTrouve = 0;
+		int motTrouve = 0;
 		for (int i=0; i< mots.lenght()-1; i++){
-			for (int j=0; j< mots[i].lenght()-1; j++){
+			int taille = mots[i].lenght();
+			for (int j=0; j< taille-1; j++){
 				if (oneMath(texte, mots[i])){
-					nombreTrouve ++;
+					motTrouve ++;
 				}
 			}
+			if (motTrouve == taille) {nombreTrouve++;}
 		}
 		if (nombreTrouve == mots.lenght())
 		{
