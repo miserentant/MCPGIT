@@ -20,6 +20,7 @@ public class Tools {
 	}
 	/*
 	 * renvoie true si tout les mots se trouve dans le texte
+	 * PAS FINI
 	 */
 	public static boolean correspond(char[] texte, char[][] mots) {
 		boolean trouve = false;
