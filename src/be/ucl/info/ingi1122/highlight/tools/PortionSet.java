@@ -1,9 +1,8 @@
 package be.ucl.info.ingi1122.highlight.tools;
 import java.util.ArrayList;
 public class PortionSet {
-	public ArrayList<Portion> MyArray;
-	public int number;
-	private int[] tab;
+	private ArrayList<Portion> MyArray;
+	private int number;
 	public PortionSet(){
 		MyArray = new ArrayList<Portion>();
 		number=0;
@@ -35,7 +34,10 @@ public class PortionSet {
 	 * @post renvoi la portion a l'indice passe en parametre
 	*/
 	public Portion get(int position) {
-		return tab[position];
+		return MyArray[position];
+	}
+	public int getNumberElem(){
+		return this.number;
 	}
 	
 
