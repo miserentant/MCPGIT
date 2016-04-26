@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class PortionSet {
 	public ArrayList<Portion> MyArray;
 	public int number;
+	public int[] tab;
 	public PortionSet(){
 		MyArray = new ArrayList<Portion>();
 		number=0;
