@@ -9,7 +9,7 @@ public class Tools {
 		portionset = new PortionSet();
 		boolean bool = correspond(texte, mots);
 		if(!bool){
-			return null
+			return null;
 		}
 		tabportion= new Portion[portionset.number];
 		for(int i =0;i<portionset.number;i++){
