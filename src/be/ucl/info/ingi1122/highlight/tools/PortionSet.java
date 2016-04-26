@@ -33,7 +33,7 @@ public class PortionSet {
 	 * @pre prend un indice positif ou nul en parametre 
 	 * @post renvoi la portion a l'indice passe en parametre
 	*/
-	public Portion get(int position) {
+	public Portion getElem(int position) {
 		return MyArray[position];
 	}
 	public int getNumberElem(){
