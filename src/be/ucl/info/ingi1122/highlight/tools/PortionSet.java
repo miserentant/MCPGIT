@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class PortionSet {
 	public ArrayList<Portion> MyArray;
 	public int number;
-	public int[] tab;
+	private int[] tab;
 	public PortionSet(){
 		MyArray = new ArrayList<Portion>();
 		number=0;
@@ -28,6 +28,14 @@ public class PortionSet {
 	}
 	public boolean chevauchement(Portion p1, Portion p2){
 		 return p2.getBegin()<p1.getEnd();
+	}
+	
+	/*
+	 * @pre prend un indice positif ou nul en parametre 
+	 * @post renvoi la portion a l'indice passe en parametre
+	*/
+	public Portion get(int position) {
+		return tab[position];
 	}
 	
 
