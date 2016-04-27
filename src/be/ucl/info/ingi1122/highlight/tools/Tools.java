@@ -14,7 +14,10 @@ public class Tools {
 		}
 		tabportion = new Portion[portionset.getNumberElem()];
 		for(int i =0; i<portionset.getNumberElem()-1; i++){
-			tabportion[i] = portionset.getElem(i);
+			try {
+				tabportion[i] = portionset.getElem(i);
+			}
+			catch (ArrayIndexOutOfBoundsException e) {System.out.println("cherche élément en dehors du tableau");}
 		}
 		return tabportion;
 	}
