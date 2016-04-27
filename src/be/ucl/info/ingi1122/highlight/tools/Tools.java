@@ -46,7 +46,6 @@ public class Tools {
 		boolean match = false;
 		int tailleM = mot.lenght();
 		int tailleT = texte.lenght();
-		int caractereTrouve = 0;
 		for (int i=0; i<(tailleT-tailleM-1) && match == false; i++) {
 			if(texte[i] == mot[0]) {
 				match = compare(i,texte,mot);
