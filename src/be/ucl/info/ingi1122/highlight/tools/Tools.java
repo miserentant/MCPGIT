@@ -37,7 +37,6 @@ public class Tools {
 	/*
 	 * @pre prend un texte et un mots a chercher en parametre
 	 * @post renvoie true si un le mot se trouve dans le texte
-	 * PAS FINI
 	*/
 	public boolean oneMatch(char[] texte, char[] mot){
 		boolean match = false;
@@ -57,7 +56,17 @@ public class Tools {
 	 * @post renvoit true si le mot se trouve a la position p du texte
 	 */
 	 public boolean compare(int position, char[] texte, char[] mot){
-	 	
+	 	boolean idem = false;
+	 	boolean dansMot = true;
+	 	int caractereTrouve = 0;
+	 	int tailleM = mot.lenght();
+	 	int tailleT = texte.lenght();
+	 	for (int i = position; i<(tailleT-tailleM-1) && i<tailleM && dansMot == true; i++){
+	 		if (texte[i] == mot[i]) {caractereTrouve ++;}
+	 		else {dansMot = false;}
+	 	}
+	 	if (caractereTrouve == tailleM) {idem = true;}
+	 	return idem;
 	 }
 	
 }
