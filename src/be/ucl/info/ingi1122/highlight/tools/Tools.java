@@ -19,23 +19,19 @@ public class Tools {
 		return tabportion;
 	}
 	/*
-	 * renvoie true si tout les mots se trouve dans le texte
-	 * PAS FINI
+	 * @pre prend un texte et une liste de mots en parametre
+	 * @post renvoie true si tout les mots se trouve dans le texte
 	 */
 	public static boolean correspond(char[] texte, char[][] mots) {
 		boolean trouve = false;
-		int nombreTrouve = 0;
+		int caractereTrouve = 0;
 		int motTrouve = 0;
 		for (int i=0; i< mots.lenght()-1; i++){
 			int taille = mots[i].lenght();
-			for (int j=0; j< taille-1; j++){
-				if (oneMath(texte, mots[i])){
-					motTrouve ++;
-				}
-			}
-			if (motTrouve == taille) {nombreTrouve++;}
+			if (oneMath(texte, mots[i])){motTrouve ++;}
+			if (motTrouve == taille) {caractereTrouve++;}
 		}
-		if (nombreTrouve == mots.lenght())
+		if (caractereTrouve == mots.lenght())
 		{
 			trouve = true;
 		}
@@ -44,9 +40,17 @@ public class Tools {
 	/*
 	 * @pre prend un texte et un mots a chercher en parametre
 	 * @post renvoie true si un le mot se trouve dans le texte
+	 * PAS FINI
 	*/
 	public boolean oneMatch(char[] texte, char[] mot){
-		return true;
+		boolean match = false;
+		int tailleM = mot.lenght();
+		int tailleT = texte.lenght();
+		int caractereTrouve = 0;
+		for (int i=0; i<(tailleT-tailleM-1)) {
+				
+		}
+		return match;
 	}
 	
 }
