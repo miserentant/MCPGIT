@@ -23,15 +23,16 @@ public class Tools {
 	}
 	/*
 	 * @pre prend un texte et une liste de mots en parametre
-	 * @post renvoie true si un mot de mots se trouve dans le texte
+	 * @post renvoie true si tous les mots se trouve dans le texte
 	 */
 	public static boolean correspond(char[] texte, char[][] mots) {
 		boolean trouve = false;
 		int motTrouve = 0;
+		int tailleM = mots[0].lenght();
 		for (int i=0; i< mots.lenght()-1; i++){
-			int taille = mots[i].lenght();
-			if (oneMath(texte, mots[i])){motTrouve ++;}		}
-		if (motTrouve >= 1 && motTrouve < taille)
+			if (oneMath(texte, mots[i]) == true){motTrouve ++;}
+		}
+		if (motTrouve == tailleM)
 		{
 			trouve = true;
 		}
@@ -39,7 +40,7 @@ public class Tools {
 	}
 	/*
 	 * @pre prend un texte et un mots a chercher en parametre
-	 * @post renvoie true si un le mot se trouve dans le texte
+	 * @post renvoie true si le mot se trouve dans le texte
 	*/
 	public boolean oneMatch(char[] texte, char[] mot){
 		boolean match = false;
