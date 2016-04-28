@@ -8,11 +8,11 @@ public class Portion {
 		this.end = end;
 	}
 
-	int getBegin(){
+	public int getBegin(){
 		return this.begin;
 	};
 
-	int getEnd(){
+	public int getEnd(){
 		return this.end;
 	};
 
