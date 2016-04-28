@@ -1,22 +1,18 @@
 package be.ucl.info.ingi1122.highlight.tools;
-import com.sun.jmx.snmp.agent.SnmpUserDataFactory;
 
-import javax.sound.sampled.Port;
 
 public class Tools {
 	
-	public static Portion[] tabportion;
-	public static PortionSet portionset;
+	//public static Portion[] tabportion;
+	//public static PortionSet portionset;
 
 	public static Portion[] quoiSurligner(char[] texte, char[][] mots) {
 		
-		boolean bool = correspond(texte, mots);
-		if(!bool){
-			System.out.println("No match found");
-			return null;
-		}
-		portionset = portioncreate(texte,mots);
-		tabportion = new Portion[portionset.getNumberElem()];
+		System.out.println(new String(texte));
+		PortionSet portionset = portioncreate(texte,mots);
+		
+	
+		Portion[] tabportion = new Portion[portionset.getNumberElem()];
 		for(int i =0; i<portionset.getNumberElem()-1; i++){
 			try {
 				tabportion[i] = portionset.getElem(i);
@@ -27,13 +23,22 @@ public class Tools {
 	}
 	public static PortionSet portioncreate(char [] texte, char[][] mots){
 		PortionSet portionset = new PortionSet();
-		int i,j;
-		for(i=0;i<texte.length;i++){
-			for(j=0;j<mots.length;j++){
-				if(compare(i,texte,mots[j])){
-					portionset.Add(new Portion(i,i+mots[j].length));
+		int i=0;
+		int j;
+		while(i<texte.length){
+			j=0;
+			while(j<mots.length){
+				
+				if(j<texte.length-mots[j].length-1){
+					if(compare(i,texte,mots[j])){
+						portionset.Add(new Portion(i,i+mots[j].length));
+				
+					}
+					
 				}
+				j++;
 			}
+			i++;
 		}
 		return portionset;
 	
