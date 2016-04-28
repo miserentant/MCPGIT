@@ -1,6 +1,8 @@
 package be.ucl.info.ingi1122.highlight.tools;
 import java.util.ArrayList;
+
 public class PortionSet {
+	
 	private ArrayList<Portion> MyArray;
 	private int number;
 	public PortionSet(){
@@ -9,7 +11,8 @@ public class PortionSet {
 	}
 	
 	public void Add(Portion p){
-		if(number==0){
+		if(p==null){return;}
+		else if(number==0){
 			MyArray.add(p);
 			number++;
 		}
@@ -32,9 +35,14 @@ public class PortionSet {
 		return p2.getEnd()<=p1.getEnd();
 	}
 	public boolean chevauchement(Portion p1, Portion p2){
-		 return p2.getBegin()<p1.getEnd();
+		 return p2.getBegin()<=p1.getEnd();
 	}
-	
+	 public Portion[] toTab(){
+	        Portion[] tabportion = new Portion[this.number];
+	        tabportion = MyArray.toArray(tabportion);
+	        System.out.println(MyArray.size());
+	        return tabportion;
+	    }
 	/*
 	 * @pre prend un indice positif ou nul en parametre 
 	 * @post renvoi la portion a l'indice passe en parametre
