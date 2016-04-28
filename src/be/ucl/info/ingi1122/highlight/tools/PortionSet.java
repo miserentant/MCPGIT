@@ -14,8 +14,11 @@ public class PortionSet {
 			number++;
 		}
 		else{
-			Portion p1 = MyArray.get(number);
-			if(chevauchement(p1,p)){
+			Portion p1 = MyArray.get(number-1);
+			if(inferieur(p1,p)){
+			
+			}
+			else if(chevauchement(p1,p)){
 				p1.end=p.end;
 			}
 			else{
@@ -24,6 +27,9 @@ public class PortionSet {
 			}
 		}
 		
+	}
+	public boolean inferieur(Portion p1, Portion p2){
+		return p2.getEnd()<=p1.getEnd();
 	}
 	public boolean chevauchement(Portion p1, Portion p2){
 		 return p2.getBegin()<p1.getEnd();
@@ -34,7 +40,7 @@ public class PortionSet {
 	 * @post renvoi la portion a l'indice passe en parametre
 	*/
 	public Portion getElem(int position) {
-		return MyArray[position];
+		return MyArray.get(position);
 	}
 	public int getNumberElem(){
 		return this.number;
