@@ -9,14 +9,14 @@ public class Tools {
 
 
       
-        PortionSet portionSet = matchSurligner(texte,mots);
+        PortionSet portionSet = TabCreate(texte,mots);
            
 
 
         return portionSet.toTab();
 	}
 
-    public  static  PortionSet matchSurligner(char[] texte, char[][] mots){
+    public  static  PortionSet TabCreate(char[] texte, char[][] mots){
         PortionSet result  = new PortionSet();
         int k;
         for(k=0;k<texte.length;k++){
