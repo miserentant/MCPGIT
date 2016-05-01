@@ -4,20 +4,20 @@ import java.util.ArrayList;
 public class PortionSet {
 	
 	private ArrayList<Portion> MyArray;
-	private int number;
+	
 	public PortionSet(){
 		MyArray = new ArrayList<Portion>();
-		number=0;
+		
 	}
 	
 	public void Add(Portion p){
 		if(p==null){return;}
-		else if(number==0){
+		else if(MyArray.size()==0){
 			MyArray.add(p);
-			number++;
+			
 		}
 		else{
-			Portion p1 = MyArray.get(number-1);
+			Portion p1 = MyArray.get(MyArray.size()-1);
 			if(inferieur(p1,p)){
 			
 			}
@@ -26,7 +26,7 @@ public class PortionSet {
 			}
 			else{
 				MyArray.add(p);
-				number++;
+				
 			}
 		}
 		
@@ -38,7 +38,7 @@ public class PortionSet {
 		 return p2.getBegin()<=p1.getEnd();
 	}
 	 public Portion[] toTab(){
-	        Portion[] tabportion = new Portion[this.number];
+	        Portion[] tabportion = new Portion[this.MyArray.size()];
 	        tabportion = MyArray.toArray(tabportion);
 	        System.out.println(MyArray.size());
 	        return tabportion;
@@ -51,7 +51,7 @@ public class PortionSet {
 		return MyArray.get(position);
 	}
 	public int getNumberElem(){
-		return this.number;
+		return this.MyArray.size();
 	}
 	
 
